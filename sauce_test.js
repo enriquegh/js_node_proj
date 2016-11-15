@@ -15,6 +15,10 @@ driver = new webdriver.Builder().
               "@ondemand.saucelabs.com:443/wd/hub").
   build();
 
+driver.getSession().then(function (session) {
+        console.log('SauceOnDemandSessionID=' + session.getId() + ' job-name=SLtest2');
+ });
+
 driver.get('http://saucelabs.com/test/guinea-pig');
 
 driver.getTitle().then(function (title) {
